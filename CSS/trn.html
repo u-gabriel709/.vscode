@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./trn.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Wombat Coffee Roasters</h1>
+            <h5>We love coffee</h5>
+        </header>
+        <div class="interest" id="button"></div>
+        <nav>
+            <ul id="ul">
+                <li>About</li>
+                <li>Shop</li>
+                <li>Menu</li>
+                <li>Brew</li>
+            </ul>
+            <div class="all">
+                <img src="./coffee-img.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, dolorem?</p>
+            </div>
+        </nav>
+
+        <div class="blocks">
+            <div class="block">
+                <div class="bigT">Versions of coffee</div>
+                <div class="smallT">
+                   <div class="text-indent"> Lorem ipsum dolor amet consectetur adipisicing elit. Adipisci tenetur</div>
+                    maiores quae qui aliquam dicta enim possimus impedit earum!
+                </div>
+            </div>
+            <div class="block">
+                <div class="bigT">Versions of coffee</div>
+                <div class="smallT">
+                    Lorem ipsum dolor amet consectetur adipisicing elit. Adipisci tenetur
+                    maiores quae qui aliquam dicta enim possimus impedit earum!
+                </div>
+            </div>
+            <div class="block">
+                <div class="bigT">Versions of coffee</div>
+                <div class="smallT">
+                    Lorem ipsum dolor amet consectetur adipisicing elit. Adipisci tenetur
+                    maiores quae qui aliquam dicta enim possimus impedit earum!
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const ul = document.getElementById('ul')
+        const button = document.getElementById('button')
+
+        button.addEventListener('click', function() {
+            ul.classList.toggle('active')
+        })
+    </script>
+</body>
+</html> 

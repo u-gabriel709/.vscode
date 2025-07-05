@@ -1,0 +1,292 @@
+win + v - откриваетса окно со смайликами
+
+patorjk
+
+Массив в котором есть другие массиви називаеться многомерний массив
+const mas = ['Hello!',true,100,[10, 50, 100]]
+mas[0] = 'Goodbay'
+mas[1] = false
+mas[2] = 999
+mas[3] = [50, 999, 100]
+console.log(mas[3][2])
+mas.push('Greg', true, 1) Добавляет елементи
+
+const data = ['Wane', 13]
+const [name, age] = data
+console.log('name:', name)
+console.log('age:', age)
+
+const lat = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+lat.forEach((element, index, array) => {
+    console.log(`In index ${index} is element "${element}"`)
+})
+
+const prices = [200, 100, 900, 500, 100, 400]
+console.log(prices.indexOf(100, 2)) Начинаем искать с 2 индекса
+console.log(prices.lastIndexOf(500)) Ищет с конца
+
+
+-----------Как вставить на сайт видео с ютуба-------------
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uyiG6uw-6pA?si=r0HoF7kIdifEAMlX" 
+    title="YouTube video player" frameborder="0"
+     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+----------Userfull & Important Styles:-----------
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .header-ulEl:hover {
+        color: white;
+        text-decoration: underline;
+        text-decoration-color: rgb(1, 180, 1);
+        text-underline-offset: 10px;
+    }
+
+    .header-ulButton:hover {
+        background-color: rgba(1, 180, 1, 0.579);
+        transition: background-color 0.5s ease;
+    }
+
+    .section2-part2-block:hover .section2-part2-blockEls {
+        color: white; 
+        animation: moveUp 0.3s forwards; 
+        background-color: rgb(20, 209, 20);
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes moveUp {
+        0% {
+            transform: translateY(0); 
+        }
+        100% {
+            transform: translateY(-20px); 
+        }
+    }
+
+
+
+
+
+---------Animation CSS----------
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+.content_circle {
+    width: 350px;
+    height: 350px;
+    background-color: #000;
+    border-radius: 100%;
+    position: relative;
+    left: 0;
+
+    animation-name: white-circle;
+    animation-duration: 4s;                 /* Длительность анимации */
+    animation-timing-function: linear;      /* Двигаться по одной линии */
+    animation-iteration-count: 1;           /* infinite -  Бесконечная анимация */
+    animation-fill-mode: forwards;          /* Какие свойства будут пременятса после завершения анимации */
+    animation-direction: reverse;           /* Двигаться в направлении наоборот */
+    animation-delay: 1s;                    /* Время задержки перед началом цикла. Если указать отрицательное значение 
+                                            цикл начнетса с уже пройденой точки за ето время */            
+                                            
+                           
+    /* Крадкая запись всего вишепоказаного: */
+    animation: white-circle 4s linear 1 forwards reverse 1s;
+}
+
+
+.wrapper:hover .content_circle {
+    animation-play-state: paused;
+}
+
+
+@keyframes white-circle {               /* Также можно указивать from to */
+    0% {
+        left: 0;
+    }
+
+    20% {
+        background-color: aqua;
+    }
+
+    50% {
+        border-radius: 0%;
+        background-color: orange;
+    }
+
+    90% {
+        background: url('./img0.1.jpeg') no-repeat;
+        background-size: 350px;
+        object-fit: contain;
+    }
+
+    100% {
+        left: 500px;
+        background: url('./img0.1.jpeg') no-repeat;
+        background-size: 350px;
+        object-fit: contain;
+    }
+}
+
+
+
+
+
+API-interface
+
+http://www.google.com:80
+
+http - Протокол
+
+www - Поддомен
+
+google.com - Домен
+
+80 - Номер порта
+
+
+
+
+
+
+.container {
+    width: 900px;
+    height: 500px;
+    background-color: black;
+    padding: 15px;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "main main"
+        "article aside1"
+        "article aside2"
+        "footer footer";
+}
+header {
+    grid-area: header;
+}
+article {
+    grid-area: article;
+    min-height: 200px;
+    max-width: 600px;
+}
+.aside1 {
+    grid-area: aside1;
+
+}
+.container > * {
+    background: blue;
+    height: 50px;
+    margin: 20px;
+}
+
+
+
+
+
+
+const makeRequest = (url, onSuccess) => {}
+
+const sellerId = 154
+
+makeRequest(`/api/sellers/${sellerId}`, (seller) => {
+    const firstProductId = seller.productIds[0]
+
+    makeRequest(`/api/products/${firstProductId}`, (product) => {
+        const firstReviewId = product.reviewIds[0]
+
+        makeRequest(`/api/reviews/${firstReviewId}`, (review) => {
+            const authorName = review.author.name
+        })
+    })
+})
+
+Это называется "callback hell" — "ад коллбэков". 
+Такой код трудно читать и поддерживать.
+Лудше использовать promise
+
+
+
+
+
+---------------Тень------------------
+1.Смещение-х  2.Смещение-у 3.Контраст(насколько сильно видно) 4.Цвет
+text-shadow: 5px 0 10px blue;
+
+
+
+
+Делает абзатс размером в 50px
+text-indent: 50px;    
+
+
+
+
+
+
+
+.interest:before {
+    content: "\2261"; --------->   ≡
+    font-size: 60px;
+}
+
+
+"\2190" → ← (влево)
+
+"\2191" → ↑ (вверх)
+
+"\2192" → → (вправо)
+
+"\2193" → ↓ (вниз)
+
+"\2248" → ≈ (приблизительно)
+
+"\2260" → ≠ (не равно)
+
+"\2264" → ≤ (меньше или равно)
+
+"\2265" → ≥ (больше или равно)
+
+"\221E" → ∞ (бесконечность)
+
+"\21D0" → ⇐ (двойная влево)
+
+"\21D1" → ⇑ (двойная вверх)
+
+"\21D2" → ⇒ (двойная вправо)
+
+"\21D3" → ⇓ (двойная вниз)
+
+"\21E6" → ⇦ (толстая влево)
+
+"\21E7" → ⇧ (толстая вверх)
+
+"\21E8" → ⇨ (толстая вправо)
+
+"\21E9" → ⇩ (толстая вниз)
+
+
+
+
+
+
+
+
+
+@media (prefers-color-scheme: dark)
+Это правило говорит: если у пользователя включена тёмная тема применяй вот эти стили
+
+
+
+
+
+
+

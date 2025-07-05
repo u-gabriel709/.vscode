@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Slider Table Filter</title>
+  <link href="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.css" rel="stylesheet">
+  <style>
+    table, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="slider"></div>
+  <input id="value-min" readonly>
+  <input id="value-max" readonly>
+  <table id="table"></table>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.js"></script>
+
+  <script>
+    var people = [
+      { name: "John", rate: 75 },
+      { name: "Amelia", rate: 60 },
+      { name: "Nolan", rate: 90 },
+      { name: "Tim", rate: 110 },
+      { name: "Neal", rate: 100 },
+      { name: "Eliza", rate: 55 },
+      { name: "Maory", rate: 95 },
+      { name: "Devid", rate: 90 }
+    ];
+
+    (function () {
+      var rows = [],
+          $min = $('#value-min'),
+          $max = $('#value-max'),
+          $table = $('#table');
+
+      function makeRows() {
+        people.forEach(function (person) {
+          var $row = $('<tr></tr>');
+          $row.append($('<td></td>').text(person.name));
+          $row.append($('<td></td>').text(person.rate));
+
+          rows.push({
+            person: person,
+            $element: $row
+          });
+        });
+      }
+
+      function appendRows() {
+        var $tbody = $('<tbody></tbody>');
+        rows.forEach(function (row) {
+          $tbody.append(row.$element);
+        });
+        $table.append($tbody);
+      }
+
+      function update(min, max) {
+        rows.forEach(function (row) {
+          if (row.person.rate >= min && row.person.rate <= max) {
+            row.$element.show();
+          } else {
+            row.$element.hide();
+          }
+        });
+      }
+
+      function init() {
+        var slider = document.getElementById('slider');
+
+        noUiSlider.create(slider, {
+          start: [65, 90],
+          connect: true,
+          range: {
+            min: 0,
+            max: 150
+          }
+        });
+
+        slider.noUiSlider.on('update', function (values, handle) {
+          $min.val(Math.round(values[0]));
+          $max.val(Math.round(values[1]));
+          update(parseFloat(values[0]), parseFloat(values[1]));
+        });
+
+        makeRows();
+        appendRows();
+      }
+
+      $(init);
+    })();
+  </script>
+
+</body>
+</html>

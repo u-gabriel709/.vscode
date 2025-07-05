@@ -1,0 +1,113 @@
+:root {
+    font-size: calc(1vw + 0.6em);
+}
+* {
+    font-family: Times, serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    margin: 20px 0 0 70px;
+}
+h1 {
+    text-transform: uppercase;
+    text-shadow: 10px 0 10px black;
+}
+h5 {
+    margin: 7px 0 50px 10px;
+    color: grey;
+}
+nav {
+    margin: 0 0 50px 0;
+}
+ul {
+    display: none;  
+    margin: -80px 0 0 1000px;
+    list-style: none;
+    font-size: 15px;
+}
+img {
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+}
+p {
+    font-weight: 500;
+    z-index: 1000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    margin: -150px 0 40px 100px;
+}
+.all {
+    position: relative;
+}
+.blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 200px;
+}
+.bigT {
+    
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+.smallT {
+    max-width: 400px;
+}
+.text-indent {
+    text-indent: 40px;
+}
+
+.interest:before {
+    content: "\2261";
+    font-size: 60px;
+    position: fixed;
+    margin: -140px 0 0 1200px;
+}
+.active {
+    display: flex;
+    margin: -70px 0 50px 1050px;
+    list-style: none;
+    font-size: 15px;
+    gap: 25px;
+    background-color: bisque;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 25px 0 0 50px;
+}
+
+
+
+@media (max-width: 560px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        color: green;
+    }
+}
+
+
+@media (max-width: 50em) {
+    header {
+        margin: 50px 0 0 100px;
+    }
+}
+
+
+
+
+
+
+

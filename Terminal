@@ -1,0 +1,28 @@
+C:\Users\user>~$ sudo apt update                  Обновляем список доступних пакетов
+
+C:\Users\user>~$ sudo apt install neofetch        Чтоб чтото установить
+
+~$ touch boobs                                    Создаем файл с именем boobs
+
+~$ nano boobs                                     Пишем чтото в етот файл
+
+~$ echo "fffff" > boobs                           Перезаписали файл
+
+~$ cat boobs                                      Все что есть в файле boobs
+
+~$ echo "hhhh" >> boobs                           Добавляем ето в конец файла boobs
+
+~$ rm boobs                                       Удаляем файл boobs
+
+
+UNIX
+
+install - zsh
+
+chsh -s $(which zsh)
+
+
+
+
+
+Vim  as vscode

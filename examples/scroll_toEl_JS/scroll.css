@@ -1,0 +1,13 @@
+.box {
+    width: 500px;
+    background-color: indianred;
+    border: 5px solid turquoise;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 900px;
+}
+
+body {
+    min-width: 200vw;
+    min-height: 20vh;
+}
